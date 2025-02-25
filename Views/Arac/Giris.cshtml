@@ -1,0 +1,42 @@
+﻿@model AspProject1.Models.Araclar
+
+@{
+    ViewBag.Title = "Araç Girişi";
+}
+
+<h2>Araç Girişi</h2>
+
+<form asp-action="Giris" method="post">
+    <div class="form-group">
+        <label asp-for="Plaka" class="control-label"></label>
+        <input asp-for="Plaka" class="form-control" />
+        <span asp-validation-for="Plaka" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Marka" class="control-label"></label>
+        <input asp-for="Marka" class="form-control" />
+        <span asp-validation-for="Marka" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Model" class="control-label"></label>
+        <input asp-for="Model" class="form-control" />
+        <span asp-validation-for="Model" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Yil" class="control-label"></label>
+        <input asp-for="Yil" class="form-control" type="number" />
+        <span asp-validation-for="Yil" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MusteriAdi" class="control-label"></label>
+        <input asp-for="MusteriAdi" class="form-control" />
+        <span asp-validation-for="MusteriAdi" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Telefon" class="control-label"></label>
+        <input asp-for="Telefon" class="form-control" />
+        <span asp-validation-for="Telefon" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>
