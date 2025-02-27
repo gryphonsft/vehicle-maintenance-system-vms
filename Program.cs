@@ -7,10 +7,13 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("AracTakipSistemiDB");
 
 // DbContext'i DI container'a ekle
-builder.Services.AddDbContext<AraclarContext>(options =>
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 builder.Services.AddControllersWithViews();
+
+//  Session servisini ekle
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -25,10 +28,14 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+//  Session'ý kullanmadan önce ekle!
+app.UseSession();
+
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Hesap}/{action=Login}/{id?}");
 
 app.Run();

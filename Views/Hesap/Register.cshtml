@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model AspProject1.Models.Kisiler
+
+
+
+<div class="container d-flex justify-content-center align-items-start mt-5">
+    <div class="p-4 bg-dark text-white rounded-3 shadow-lg" style="width: 350px;">
+        <h1 class="text-center">Kayıt Ekranı</h1>
+        <form asp-action="Register" method="post">
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" type="text" class="form-control" required />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" type="password" class="form-control" required />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-success w-100">Kayıt Ol</button>
+            </div>
+        </form>
+        <br />
+        <div class="text-center">
+            <a asp-action="Login" class="btn btn-primary w-100">Zaten hesabınız var mı? Giriş yapın</a>
+        </div>
+    </div>
+</div>
+
+
+

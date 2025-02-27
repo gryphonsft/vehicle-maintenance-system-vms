@@ -4,10 +4,13 @@
     ViewBag.Title = "Araç Girişi";
 }
 
-<h2>Araç Girişi</h2>
+<h2 class="font-bold text-center">Araç Girişi</h2>
+<hr />
+<br />
 
-<form asp-action="Giris" method="post">
-    <div class="form-group">
+<form asp-action="AracEkle" method="post">
+    <div class="font-bold">
+    <div class="form-group ">
         <label asp-for="Plaka" class="control-label"></label>
         <input asp-for="Plaka" class="form-control" />
         <span asp-validation-for="Plaka" class="text-danger"></span>
@@ -37,6 +40,6 @@
         <input asp-for="Telefon" class="form-control" />
         <span asp-validation-for="Telefon" class="text-danger"></span>
     </div>
-
+    </div>
     <button type="submit" class="btn btn-primary">Kaydet</button>
 </form>

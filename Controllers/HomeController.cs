@@ -15,11 +15,22 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+       
         return View();
     }
 
+
     public IActionResult Privacy()
     {
+        return View();
+    }
+    public IActionResult Main()
+    {
+        if (HttpContext.Session.GetInt32("Id") == null)
+        {
+
+            return RedirectToAction("Login", "Hesap");
+        }
         return View();
     }
 
