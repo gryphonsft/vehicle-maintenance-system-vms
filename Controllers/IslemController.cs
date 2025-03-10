@@ -29,15 +29,15 @@ public async Task<IActionResult> Index()
         Araclar = await _context.Araclar.ToListAsync(),
         BakimFiyatlari = await _context.BakimFiyatlari.ToListAsync(),
         Islemler = await _context.Islemler
-            .Include(i => i.Arac)  // Arac'ı dahil et
-            .Include(i => i.BakimFiyat)  // BakimFiyat'ı dahil et
-            .ToListAsync()  // Islemleri listele
+            .Include(i => i.Arac)  
+            .Include(i => i.BakimFiyat)  
+            .ToListAsync()  
     };
 
     return View(model);
 }
 
-    // İşlem Kaydetme
+    
     [HttpPost]
     public async Task<IActionResult> Ekle(int aracID, int bakimID, string islemNotu)
     {
