@@ -5,7 +5,8 @@ namespace AspProject1.Models
 {
     public class Araclar
     {
-        public int Id { get; set; }
+        [Key]
+        public int AracID { get; set; }
 
         [Required(ErrorMessage = "Plaka alanı boş geçilemez")]
         public string? Plaka { get; set; }
@@ -20,6 +21,9 @@ namespace AspProject1.Models
 
 
         public int Yil { get; set; }
+        [Required(ErrorMessage = "Bakım notu adı alanı boş geçilemez")]
+
+        public string? BakimNotu { get; set; }
         [Required(ErrorMessage = "Müşteri adı alanı boş geçilemez")]
 
         public string? MusteriAdi { get; set; }
@@ -27,7 +31,8 @@ namespace AspProject1.Models
         [Required(ErrorMessage = "Telefon alanı boş geçilemez")]
         public string? Telefon { get; set; }
 
-        
-       
+        public virtual List<Islemler> Islemler { get; set; } = new List<Islemler>();
+
+
     }
 }

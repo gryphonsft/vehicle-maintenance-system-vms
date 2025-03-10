@@ -27,6 +27,7 @@
                 <th>Marka <i class="fa-solid fa-tag"></i></th>
                 <th>Model <i class="fa-solid fa-car-side"></i></th>
                 <th>Araç Yılı <i class="fa-solid fa-calendar"></i></th>
+                <th>Bakım Notu</th>
                 <th>Müşteri Adı <i class="fa-solid fa-person"></i></th>
                 <th>Müşteri Telefonu <i class="fa-solid fa-phone"></i></th>
             </tr>
@@ -36,11 +37,12 @@
             @foreach (var arac in Model)
             {
                 <tr>
-                    <td>@arac.Id</td>
+                    <td>@arac.AracID</td>
                     <td>@arac.Plaka</td>
                     <td>@arac.Marka</td>
                     <td>@arac.Model</td>
                     <td>@arac.Yil</td>
+                    <td>@arac.BakimNotu</td>
                     <td>@arac.MusteriAdi</td>
                     <td>@arac.Telefon</td>
                 </tr>
@@ -51,8 +53,8 @@
     <div class="mb-3 d-flex justify-content-start align-items-center gap-3">
 
         <form asp-controller="Arac" asp-action="Silme" method="post" class="d-flex align-items-center">
-            <label for="Id" class="me-2 fw-bold">Silinecek Araç ID:</label>
-            <input type="number" name="Id" id="Id" class="form-control w-50 me-2" required />
+            <label for="AracID" class="me-2 fw-bold">Silinecek Araç ID:</label>
+            <input type="number" name="AracID" id="AracID" class="form-control w-50 me-2" required />
             <button type="submit" class="btn btn-danger">Sil</button>
         </form>
 

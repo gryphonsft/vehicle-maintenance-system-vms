@@ -1,0 +1,28 @@
+﻿@model AspProject1.Models.BakimFiyatlari
+@{
+}
+<div class="text-center">
+    <h1>Bakim ekleme ekranına hos geldiniz</h1>
+   
+</div>
+<form asp-action="BakimEkle" method="post">
+    <div class="font-bold">
+        <div class="form-group ">
+            <label asp-for="BakimAdi" class="control-label"></label>
+            <input asp-for="BakimAdi" class="form-control" />
+            <span asp-validation-for="BakimAdi" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Ucret" class="control-label"></label>
+            <input asp-for="Ucret" class="form-control" />
+            <span asp-validation-for="Ucret" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Aciklama" class="control-label"></label>
+            <input asp-for="Aciklama" class="form-control" />
+            <span asp-validation-for="Aciklama" class="text-danger"></span>
+        </div>
+        
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

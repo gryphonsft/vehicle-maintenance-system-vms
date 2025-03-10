@@ -43,6 +43,7 @@ namespace AspProject1.Controllers
                 arac.Model = arac.Model?.Replace(" ", "");               
                 arac.Telefon = arac.Telefon?.Replace(" ", "");
                 arac.MusteriAdi = arac.MusteriAdi?.Replace(" ","");
+                arac.BakimNotu = arac.BakimNotu?.Replace(" ", "");
 
                 _context.Araclar.Add(arac);
                 _context.SaveChanges();
@@ -65,10 +66,10 @@ namespace AspProject1.Controllers
         }
 
 
-        public IActionResult Silme(int Id)
+        public IActionResult Silme(int AracID)
         {
 
-            var arac = _context.Araclar.Find(Id);
+            var arac = _context.Araclar.Find(AracID);
             if (arac != null)
             {
                 _context.Araclar.Remove(arac);
@@ -78,14 +79,7 @@ namespace AspProject1.Controllers
             return RedirectToAction("Liste");
         }
 
-        public IActionResult Bakim()
-        {
-            if (HttpContext.Session.GetInt32("Id") == null)
-            {
-                return RedirectToAction("Login", "Hesap");
-            }
-            return View();
-        }
+        
         public ActionResult Search(string searchString)
         {
             var araclar = _context.Araclar.AsQueryable();
