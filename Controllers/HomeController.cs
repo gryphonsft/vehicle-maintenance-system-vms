@@ -6,16 +6,19 @@ namespace AspProject1.Controllers;
 
 public class HomeController : Controller
 {
+    
+private readonly ApplicationDbContext _db;
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ApplicationDbContext db, ILogger<HomeController> logger)
     {
+        _db = db;
         _logger = logger;
     }
 
     public IActionResult Index()
     {
-       
+
         return View();
     }
 
@@ -31,6 +34,15 @@ public class HomeController : Controller
 
             return RedirectToAction("Login", "Hesap");
         }
+
+        int toplamAraclarim = _db.Araclar.Count();
+        int bakimTuruSayisi = _db.BakimFiyatlari.Count();
+        int tamamlananBakim = _db.Islemler.Count();
+
+
+        ViewBag.ToplamAraclarim = toplamAraclarim;
+        ViewBag.BakimTuruSayisi = bakimTuruSayisi;
+        ViewBag.TamamlananBakim = tamamlananBakim;
         return View();
     }
 

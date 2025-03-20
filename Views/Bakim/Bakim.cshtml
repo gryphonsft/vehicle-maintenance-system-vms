@@ -3,16 +3,18 @@
 @{
     ViewData["Title"] = "Bakım Fiyatları";
 }
+
 <div class="text-center">
-   
-    <a href="@Url.Action("BakimEkle", "Bakim")" class="btn btn-primary">Bakım Ekleme ekranına git</a>
+    <a href="@Url.Action("BakimEkle", "Bakim")" class="btn btn-primary bg-indigo-600">Bakım Ekleme ekranına git</a>
 </div>
+
 <table class="table table-striped">
     <thead>
         <tr>
             <th>Bakım Adı</th>
             <th>Ücret</th>
-            <th>Aciklama</th>
+            <th>Açıklama</th>
+            <th>İşlem</th> 
         </tr>
     </thead>
     <tbody>
@@ -22,6 +24,12 @@
                 <td>@bakim.BakimAdi</td>
                 <td>@bakim.Ucret.ToString("C")</td>
                 <td>@bakim.Aciklama</td>
+                <td>
+                    <form asp-action="BakimSil" asp-controller="Bakim" method="post" style="display:inline;">
+                        <input type="hidden" name="BakimID" value="@bakim.BakimID" />
+                        <button type="submit" class="btn btn-danger btn-sm ">Sil</button>
+                    </form>
+                </td>
             </tr>
         }
     </tbody>

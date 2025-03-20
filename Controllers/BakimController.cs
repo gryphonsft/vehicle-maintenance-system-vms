@@ -47,5 +47,16 @@ namespace AspProject1.Controllers
             return View(bakim);
             
         }
+        [HttpPost]
+        public IActionResult BakimSil(int BakimID)
+        {
+            var bakim = _context.BakimFiyatlari.Find(BakimID);
+            if (bakim != null)
+            {
+                _context.BakimFiyatlari.Remove(bakim);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Bakim");
+        }
     }
 }
