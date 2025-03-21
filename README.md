@@ -1,15 +1,15 @@
 # ASP.NET MVC Araç Bakım Sistemi (BETA)
 # Ana Ekran
-![Main](Pictures/Main.png)
+![Main](Pictures/Main.PNG)
 # Giriş ekranı
-![login](Pictures/Giris.png)
+![Giris](Pictures/Giris.PNG)
 # Araç Ekleme 
-![aracgiris](Pictures/AracEkleme.png)
+![AracEkleme](Pictures/AracEkleme.PNG)
 # Araç Listeleme
-![aracliste](Pictures/Liste.png)
+![Liste](Pictures/Liste.PNG)
 # Bakım Listesi
-![bakımlistesi](Pictures/BakimFiyatlari.png)
+![BakimFiyatlari](Pictures/BakimFiyatlari.PNG)
 # İşlem giriş ekranı
-![islemekranı](Pictures/Islemler.png)
+![Islemler](Pictures/Islemler.PNG)
 
 
