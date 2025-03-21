@@ -1,38 +1,60 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
     ViewData["Title"] = "Ana Ekran";
 }
-<div class="flex flex-wrap lg:flex-nowrap gap-4 mt-5">
-    
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 flex-grow">
-        <div class="bg-blue-500 text-white p-5 rounded-lg shadow-lg">
-            <h2 class="text-xl font-bold">Toplam Araç</h2>
-            <p id="ToplamAraclarim" class="text-3xl font-semibold">@ViewBag.ToplamAraclarim</p>
-        </div>
-        <div class="bg-yellow-500 text-white p-5 rounded-lg shadow-lg">
-            <h2 class="text-xl font-bold">Bakım Sayısı</h2>
-            <p id="BakimTuruSayisi" class="text-3xl font-semibold">@ViewBag.BakimTuruSayisi</p>
-        </div>
-        <div class="bg-green-500 text-white p-5 rounded-lg shadow-lg">
-            <h2 class="text-xl font-bold">Tamamlanan Bakım</h2>
-            <p id="TamamlananBakim" class="text-3xl font-semibold">@ViewBag.TamamlananBakim</p>
-        </div>
+
+<div class="rounded-3xl gap-2 p-2 mb-0 overflow-hidden" style="background-color: #333333;">
+
+
+    <div class="flex flex-wrap lg:flex-nowrap justify-center gap-4 mt-6">
+        <a asp-controller="Arac" asp-action="Giris" class="bg-white shadow-lg rounded-xl p-6 text-center w-48 hover:bg-gray-100 transition">
+            <img src="/images/car.png" alt="Araç Girişi" class="mx-auto w-16 mb-3">
+            <h5 class="text-lg font-semibold">Araç Girişi</h5>
+        </a>
+        <a asp-controller="Arac" asp-action="Liste" class="bg-white shadow-lg rounded-xl p-6 text-center w-48 hover:bg-gray-100 transition">
+            <img src="/images/liste.png" alt="Araç Listesi" class="mx-auto w-16 mb-3">
+            <h5 class="text-lg font-semibold">Araç Listesi</h5>
+        </a>
+        <a asp-controller="Bakim" asp-action="Bakim" class="bg-white shadow-lg rounded-xl p-6 text-center w-48 hover:bg-gray-100 transition">
+            <img src="/images/tl.png" alt="Bakım Fiyatları" class="mx-auto w-16 mb-3">
+            <h5 class="text-lg font-semibold">Bakım Fiyatları</h5>
+        </a>
+        <a asp-controller="Islem" asp-action="Index" class="bg-white shadow-lg rounded-xl p-6 text-center w-48 hover:bg-gray-100 transition">
+            <img src="/images/cark.png" alt="İşlemler" class="mx-auto w-16 mb-3">
+            <h5 class="text-lg font-semibold">İşlemler</h5>
+        </a>
     </div>
 
-   
-    <div class="flex justify-center items-center w-1/3 max-w-xs">
-        <canvas id="vehicleChart"></canvas>
+    <div class="flex flex-wrap lg:flex-nowrap gap-4 p-4 mt-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 flex-grow">
+            <div class="bg-blue-500 text-white p-5 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold">Toplam Araç</h2>
+                <p id="ToplamAraclarim" class="text-3xl font-semibold">@ViewBag.ToplamAraclarim</p>
+            </div>
+            <div class="bg-yellow-500 text-white p-5 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold">Bakım Sayısı</h2>
+                <p id="BakimTuruSayisi" class="text-3xl font-semibold">@ViewBag.BakimTuruSayisi</p>
+            </div>
+            <div class="bg-green-500 text-white p-5 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold">Tamamlanan Bakım</h2>
+                <p id="TamamlananBakim" class="text-3xl font-semibold">@ViewBag.TamamlananBakim</p>
+            </div>
+        </div>
+
+        <div class="flex justify-center items-center w-1/3 max-w-xs">
+            <canvas id="vehicleChart"></canvas>
+        </div>
     </div>
+    
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script id="chartData" type="application/json">
+        @Html.Raw(Json.Serialize(new[] {
+            ViewBag.ToplamAraclarim ?? 0,
+            ViewBag.BakimTuruSayisi ?? 0,
+            ViewBag.TamamlananBakim ?? 0
+        }))
+    </script>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script id="chartData" type="application/json">
-    @Html.Raw(Json.Serialize(new[] {
-        ViewBag.ToplamAraclarim ?? 0,
-        ViewBag.BakimTuruSayisi ?? 0,
-        ViewBag.TamamlananBakim ?? 0
-    }))
-</script>
-<canvas id="vehicleChart"></canvas>
+    
+
 <script src="~/js/chart.js"></script>

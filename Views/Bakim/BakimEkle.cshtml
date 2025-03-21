@@ -1,6 +1,7 @@
 ﻿@model AspProject1.Models.BakimFiyatlari
 @{
 }
+<div class="bg-dark rounded-3xl gap-2 p-2 mb-0 text-white">
 <div class="text-center">
     <h1>Bakim ekleme ekranına hos geldiniz</h1>
    
@@ -24,5 +25,9 @@
         </div>
         
     </div>
-    <button type="submit" class="btn btn-primary bg-indigo-600">Kaydet</button>
+   <div class="flex justify-center mt-4">
+    <button type="submit" class="btn btn-primary bg-indigo-600 px-6 py-2 rounded-lg">Kaydet</button>
+     <a href="@Url.Action("Bakim", "Bakim")" class="btn btn-primary bg-indigo-600">Geri dön</a>
+    </div>
+
 </form>

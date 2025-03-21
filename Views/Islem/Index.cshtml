@@ -1,76 +1,85 @@
 ﻿@model AspProject1.Models.IslemViewModel
+<div class="bg-dark rounded-3xl gap-2 p-2 mb-0 text-white">
+    <h1 class="text-3xl font-semibold mb-4 text-center">İşlem Ekle</h1>
 
-<h1 class="text-3xl font-semibold mb-4">İşlem Ekle</h1>
+    <div class="mb-4">
+        <form method="post" action="@Url.Action("Ekle", "Islem")">
 
-<div class="mb-4">
-    <form method="post" action="@Url.Action("Ekle", "Islem")">
-       
-        <div class="mb-4">
-            <label for="aracID" class="block text-sm font-medium text-gray-700">Araç Seç</label>
-            <select id="aracID" name="aracID" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                <option value="">Bir Araç Seçin</option>
-                @foreach (var arac in Model.Araclar)
-                {
-                    <option value="@arac.AracID">@arac.Plaka - @arac.Marka @arac.Model</option>
-                }
-            </select>
-        </div>
+            <div class="mb-4">
+                <label for="aracID" class="block text-sm font-medium text-white">Araç Seç</label>
+                <select id="aracID" name="aracID"
+                    class="mt-1 block w-full py-2 px-3 border border-gray-600 bg-gray-800 text-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option value="">Bir Araç Seçin</option>
+                    @foreach (var arac in Model.Araclar)
+                    {
+                        <option value="@arac.AracID">@arac.Plaka - @arac.Marka @arac.Model</option>
+                    }
+                </select>
 
-       
-        <div class="mb-4">
-            <label for="bakimID" class="block text-sm font-medium text-gray-700">Bakım Seç</label>
-            <select id="bakimID" name="bakimID" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                <option value="">Bir Bakım Seçin</option>
-                @foreach (var bakim in Model.BakimFiyatlari)
-                {
-                    <option value="@bakim.BakimID">@bakim.BakimAdi - @bakim.Ucret ₺</option>
-                }
-            </select>
-        </div>
+            </div>
 
-        
-        <div class="mb-4">
-            <label for="islemNotu" class="block text-sm font-medium text-gray-700">İşlem Notu</label>
-            <textarea id="islemNotu" name="islemNotu" rows="3" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="İşlem ile ilgili not girin..."></textarea>
-        </div>
 
-        <button type="submit" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-            Kaydet
-        </button>
-    </form>
-</div>
+            <div class="mb-4">
+                <label for="bakimID" class="block text-sm font-medium text-white">Bakım Seç</label>
+                <select id="bakimID" name="bakimID"
+                    class="mt-1 block w-full py-2 px-3 border border-gray-600 bg-gray-800 text-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option value="">Bir Bakım Seçin</option>
+                    @foreach (var bakim in Model.BakimFiyatlari)
+                    {
+                        <option value="@bakim.BakimID">@bakim.BakimAdi - @bakim.Ucret ₺</option>
+                    }
+                </select>
+            </div>
 
-<h2 class="text-2xl font-semibold mt-8">İşlemler</h2>
-<br>
-<table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
-    <thead class="bg-gray-100">
-        <tr>
-            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Arac</th>
-            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Bakım</th>
-            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Ücret</th>
-            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Tarih</th>
-            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Not</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (Model.Islemler != null && Model.Islemler.Any())
-        {
-            @foreach (var islem in Model.Islemler)
+
+            <div class="mb-4">
+                <label for="islemNotu" class="block text-sm font-medium text-white">İşlem Notu</label>
+                <textarea id="islemNotu" name="islemNotu" rows="3"
+                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    placeholder="İşlem ile ilgili not girin..."></textarea>
+            </div>
+           
+                <button type="submit"
+                    class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    Kaydet
+                </button>
+                 <a href="@Url.Action("Main", "Home")" class="btn btn-primary bg-indigo-600">Geri dön</a>
+           
+        </form>
+    </div>
+
+    <h2 class="text-2xl font-semibold mt-8 text-center">İşlemler</h2>
+    <br>
+    <table class="min-w-full bg-gray-800 border border-gray-300 rounded-lg shadow-md">
+        <thead class="bg-gray-100">
+            <tr class="text-white">
+                <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Arac</th>
+                <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Bakım</th>
+                <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Ücret</th>
+                <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Tarih</th>
+                <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Not</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Islemler != null && Model.Islemler.Any())
             {
-                <tr class="border-t hover:bg-gray-50">
-                    <td class="px-4 py-2 text-sm text-gray-900">@islem.Arac.Plaka - @islem.Arac.Marka @islem.Arac.Model</td>
-                    <td class="px-4 py-2 text-sm text-gray-900">@islem.BakimFiyat.BakimAdi</td>
-                    <td class="px-4 py-2 text-sm text-gray-900">@islem.BakimFiyat.Ucret ₺</td>
-                    <td class="px-4 py-2 text-sm text-gray-900">@islem.IslemTarihi.ToShortDateString()</td>
-                    <td class="px-4 py-2 text-sm text-gray-900">@islem.IslemNotu</td>
+                @foreach (var islem in Model.Islemler)
+                {
+                    <tr class="border-t hover:text-white">
+                        <td class="px-4 py-2 text-sm text-white">@islem.Arac.Plaka - @islem.Arac.Marka @islem.Arac.Model</td>
+                        <td class="px-4 py-2 text-sm text-white">@islem.BakimFiyat.BakimAdi</td>
+                        <td class="px-4 py-2 text-sm text-white">@islem.BakimFiyat.Ucret ₺</td>
+                        <td class="px-4 py-2 text-sm text-white">@islem.IslemTarihi.ToShortDateString()</td>
+                        <td class="px-4 py-2 text-sm text-white">@islem.IslemNotu</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" class="px-4 py-2 text-center text-sm text-gray-500">İşlem bulunamadi</td>
                 </tr>
             }
-        }
-        else
-        {
-            <tr>
-                <td colspan="5" class="px-4 py-2 text-center text-sm text-gray-500">İşlem bulunamadi</td>
-            </tr>
-        }
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>

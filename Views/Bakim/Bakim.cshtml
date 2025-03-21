@@ -4,13 +4,12 @@
     ViewData["Title"] = "Bakım Fiyatları";
 }
 
-<div class="text-center">
-    <a href="@Url.Action("BakimEkle", "Bakim")" class="btn btn-primary bg-indigo-600">Bakım Ekleme ekranına git</a>
-</div>
 
+<br>
+<div class="bg-dark rounded-3xl gap-2 p-2 mb-0 text-white">
 <table class="table table-striped">
     <thead>
-        <tr>
+        <tr class="text-white">
             <th>Bakım Adı</th>
             <th>Ücret</th>
             <th>Açıklama</th>
@@ -20,7 +19,7 @@
     <tbody>
         @foreach (var bakim in Model)
         {
-            <tr>
+            <tr class="text-white">
                 <td>@bakim.BakimAdi</td>
                 <td>@bakim.Ucret.ToString("C")</td>
                 <td>@bakim.Aciklama</td>
@@ -34,3 +33,10 @@
         }
     </tbody>
 </table>
+<div class="text-center">
+    <a href="@Url.Action("BakimEkle", "Bakim")" class="btn btn-primary bg-indigo-600">Bakım Ekleme ekranına git</a>
+
+
+    <a href="@Url.Action("Main", "Home")" class="btn btn-primary bg-indigo-600">Geri dön</a>
+</div>
+</div>
