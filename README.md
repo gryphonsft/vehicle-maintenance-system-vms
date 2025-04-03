@@ -1,4 +1,4 @@
-# ASP.NET MVC Araç Bakım Sistemi (BETA)
+# ASP.NET CORE MVC Araç Bakım Sistemi (BETA)
 # Ana Ekran
 ![Main](Pictures/Main.PNG)
 # Giriş ekranı
