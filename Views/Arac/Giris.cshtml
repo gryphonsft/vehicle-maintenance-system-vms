@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Araç Giriş";
 }
-<div class="bg-dark rounded-3xl gap-2 p-2 mb-0 text-white">
+<div class=" rounded-3xl gap-2 p-2 mb-0 text-white mt-40" style="background-color: #333333;">
 
 <h2 class="font-bold text-center">Araç Girişi</h2>
 <hr />
@@ -13,43 +13,43 @@
     <div class="font-bold">
     <div class="form-group ">
         <label asp-for="Plaka" class="control-label"></label>
-        <input asp-for="Plaka" class="form-control" />
+        <input asp-for="Plaka" class="form-control" required />
         <span asp-validation-for="Plaka" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Marka" class="control-label"></label>
-        <input asp-for="Marka" class="form-control" />
+        <input asp-for="Marka" class="form-control" required />
         <span asp-validation-for="Marka" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Model" class="control-label"></label>
-        <input asp-for="Model" class="form-control" />
+        <input asp-for="Model" class="form-control" required/>
         <span asp-validation-for="Model" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Yil" class="control-label"></label>
-        <input asp-for="Yil" class="form-control" type="number" />
+        <input asp-for="Yil" class="form-control" type="number" required/>
         <span asp-validation-for="Yil" class="text-danger"></span>
     </div>
         <div class="form-group">
             <label asp-for="BakimNotu" class="control-label"></label>
-            <input asp-for="BakimNotu" class="form-control" />
+            <input asp-for="BakimNotu" class="form-control" required/>
             <span asp-validation-for="BakimNotu" class="text-danger"></span>
         </div>
     <div class="form-group">
         <label asp-for="MusteriAdi" class="control-label"></label>
-        <input asp-for="MusteriAdi" class="form-control" />
+        <input asp-for="MusteriAdi" class="form-control" required/>
         <span asp-validation-for="MusteriAdi" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Telefon" class="control-label"></label>
-        <input asp-for="Telefon" class="form-control" />
+        <input asp-for="Telefon" class="form-control" required/>
         <span asp-validation-for="Telefon" class="text-danger"></span>
     </div>
     </div>
     <br />
     <div class="text-center">
-    <button type="submit" class="btn btn-primary bg-indigo-600">Kaydet</button>
+    <button type="submit" class="btn btn-primary bg-indigo-600 " >Kaydet</button>
      <a href="@Url.Action("Main", "Home")" class="btn btn-primary bg-indigo-600">Geri dön</a>
     </div>
 </form>

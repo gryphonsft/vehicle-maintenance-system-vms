@@ -1,75 +1,62 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - AraçBakımSistemi</title>
+    <link rel="stylesheet" href="~/css/site.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/AspProject1.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/tailwindcss/tailwind.min.css" />
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
-    <link rel="stylesheet" href="~/css/site.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
-        body{
-            background-color: #ffffff;
-        }
-        .navbar-nav .nav-item:hover .nav-link {
-            background-color: #adb5bd;
-            transition: background-color 0.3s ease;
-            border-radius: 10px;
-        }
-        
-        /* Sayfa tam görünür olacak şekilde kutunun boyutunu ayarla */
-        .bg-dark {
-            min-height: auto !important;
-            height: auto !important;
-            overflow: hidden;
-        }
-        
-        /* Main kısmının gereksiz büyümesini engelle */
-        .main-container {
-            min-height: calc(100vh - 120px); /* Header ve Footer'ı çıkarttık */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        /* Footer sabit kalacak şekilde hizala */
-        .footer {
-            position: relative;
-            width: 100%;
-            text-align: center;
-            padding: 10px 0;
-        }
+
     </style>
 </head>
-<body class="flex flex-col min-h-screen ">
-   <header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3" style="background-color: #333333;">
-        <div class="container-fluid d-flex justify-content-center align-items-center">
-            <a class="navbar-brand text-white text-3xl" asp-area="" asp-controller="Home" asp-action="Main">
-                <i class="fa-solid fa-gears"></i> AraçBakımSistemi
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </nav>
-</header>
 
-    <div class="main-container">
-        <main class="p-4 w-full max-w-5xl mx-auto">
+<body class="bg-gray-100 flex roboto" style="background-color: rgb(34, 33, 33);">
+
+   <aside class="sidebar w-64 text-white p-4 h-screen rounded-tr-3xl rounded-br-3xl" style="background-color: #333333;">
+    <h1 class="text-3xl mb-2  text-center sidebar-item mt-4" style="font-weight: bold;">Bakım Yönetim Sistemi </h1>
+    <div class="space-y-2 rounded-2xl p-2 text-center mt-8">
+        <a asp-controller="Home" asp-action="Main" class="sidebar-item">
+            <h1 class="text-2xl rounded-2xl font-semibold mb-4 mt-16">
+                <i class="fa-solid fa-house"></i> Ana Menü
+            </h1>
+        </a>
+    </div>
+
+    <div class="space-y-2 rounded-2xl p-2 text-center mt-2">
+        <a asp-controller="Arac" asp-action="Giris" class="sidebar-item">
+            <h1 class="text-3xl"><i class="fa-solid fa-car-side"></i> Araç Girişi </h1>
+        </a>
+    </div>
+    <div class="space-y-2 rounded-2xl p-2 text-center mt-4">
+        <a asp-controller="Arac" asp-action="Liste" class="sidebar-item">
+            <h1 class="text-2xl"><i class="fa-solid fa-list"></i> Araç Listesi </h1>
+        </a>
+    </div>
+    <div class="space-y-2 rounded-2xl p-2 text-center mt-4">
+        <a asp-controller="Bakim" asp-action="Bakim" class="sidebar-item">
+            <h1 class="text-2xl"><i class="fa-solid fa-dollar-sign"></i> Bakım fiyatları </h1>
+        </a>
+    </div>
+    <div class="space-y-2 rounded-2xl p-2 text-center mt-4">
+        <a asp-controller="Islem" asp-action="Index" class="sidebar-item">
+            <h1 class="text-3xl"><i class="fa-solid fa-gear"></i> İşlemler </h1>
+        </a>
+    </div>
+</aside>
+
+    <div class="main-container flex-1">
+        <main class="p-4">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="footer text-muted">
-        <div class="container">
-            &copy; AraçBakımSistemi - <a asp-area="" asp-controller="Home" asp-action="About">ABOUT ME</a>
-        </div>
-    </footer>
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -77,11 +64,6 @@
 
     @await RenderSectionAsync("Scripts", required: false)
 
-    <script>
-        // Sayfa açıldığında scroll'u yukarı al
-        window.onload = function() {
-            document.documentElement.scrollTop = 0;
-        };
-    </script>
 </body>
+
 </html>

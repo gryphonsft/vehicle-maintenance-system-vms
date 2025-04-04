@@ -1,5 +1,22 @@
 ﻿@model AspProject1.Models.IslemViewModel
-<div class="bg-dark rounded-3xl gap-2 p-2 mb-0 text-white">
+@if (TempData["SuccessMessage"] != null)
+{
+    <script>
+        Swal.fire({
+            title: 'İşlem Başarılı!',
+            text: "@TempData["SuccessMessage"]",
+            icon: 'success',
+            confirmButtonText: 'Tamam',
+            background: '#f0f8ff',
+            titleColor: '#333',
+            confirmButtonColor: '#007bff',
+            width: '400px',
+            padding: '20px',
+            borderRadius: '10px'
+        });
+    </script>
+}
+<div class="rounded-3xl gap-2 p-2 mb-0 text-white mt-40" style="background-color: #333333;">
     <h1 class="text-3xl font-semibold mb-4 text-center">İşlem Ekle</h1>
 
     <div class="mb-4">
@@ -34,17 +51,19 @@
 
             <div class="mb-4">
                 <label for="islemNotu" class="block text-sm font-medium text-white">İşlem Notu</label>
-                <textarea id="islemNotu" name="islemNotu" rows="3"
+                <textarea id="islemNotu" name="islemNotu" rows="3" required
                     class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-gray-800 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     placeholder="İşlem ile ilgili not girin..."></textarea>
             </div>
-           
-                <button type="submit"
-                    class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                    Kaydet
-                </button>
-                 <a href="@Url.Action("Main", "Home")" class="btn btn-primary bg-indigo-600">Geri dön</a>
-           
+
+            <button type="submit"
+                class="btn btn-primary inline-block bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                style="background-color: #292828;">
+                Kaydet
+            </button>
+            <a href="@Url.Action("Main", "Home")" class="btn btn-primary" style="background-color: #292828;">Geri
+                dön</a>
+
         </form>
     </div>
 
@@ -52,12 +71,13 @@
     <br>
     <table class="min-w-full bg-gray-800 border border-gray-300 rounded-lg shadow-md">
         <thead class="bg-gray-100">
-            <tr class="text-white">
-                <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Arac</th>
-                <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Bakım</th>
-                <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Ücret</th>
-                <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Tarih</th>
-                <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Not</th>
+            <tr class="text-white" style="background-color: #292828;">
+                <th class="px-4 py-2 text-left text-sm font-medium">Arac</th>
+                <th class="px-4 py-2 text-left text-sm font-medium">Bakım</th>
+                <th class="px-4 py-2 text-left text-sm font-medium">Ücret</th>
+                <th class="px-4 py-2 text-left text-sm font-medium">Tarih</th>
+                <th class="px-4 py-2 text-left text-sm font-medium">Not</th>
+                <th class="px-4 py-2 text-left text-sm font-medium">İşlem</th>
             </tr>
         </thead>
         <tbody>
@@ -71,6 +91,14 @@
                         <td class="px-4 py-2 text-sm text-white">@islem.BakimFiyat.Ucret ₺</td>
                         <td class="px-4 py-2 text-sm text-white">@islem.IslemTarihi.ToShortDateString()</td>
                         <td class="px-4 py-2 text-sm text-white">@islem.IslemNotu</td>
+                        <td class="px-4 py-2 text-sm text-white">
+                            <form asp-action="IslemSil" asp-controller="Islem" method="post" style="display:inline;">
+                                <input type="hidden" name="IslemID" value="@islem.IslemID" />
+                                <button type="submit" class="btn btn-danger btn-sm ">Sil</button>
+
+                            </form>
+
+                        </td>
                     </tr>
                 }
             }

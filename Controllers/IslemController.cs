@@ -56,9 +56,20 @@ public async Task<IActionResult> Index()
             BakimID = bakimID,
             IslemNotu = islemNotu
         };
-
+        TempData["SuccessMessage"] = "Kayit basariyla eklendi!";
         _context.Islemler.Add(islem);
         await _context.SaveChangesAsync();
+       
+        return RedirectToAction("Index");
+    }
+    public IActionResult IslemSil(int IslemID){
+        var islem = _context.Islemler.Find(IslemID);
+        if(islem != null)
+        {
+            _context.Islemler.Remove(islem);
+            _context.SaveChanges();
+
+        }
 
         return RedirectToAction("Index");
     }

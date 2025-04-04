@@ -1,7 +1,7 @@
 ﻿@model AspProject1.Models.BakimFiyatlari
 @{
 }
-<div class="bg-dark rounded-3xl gap-2 p-2 mb-0 text-white">
+<div class=" rounded-3xl gap-2 p-2 mb-0 text-white mt-80" style="background-color: #333333;">
 <div class="text-center">
     <h1>Bakim ekleme ekranına hos geldiniz</h1>
    
@@ -10,17 +10,17 @@
     <div class="font-bold">
         <div class="form-group ">
             <label asp-for="BakimAdi" class="control-label"></label>
-            <input asp-for="BakimAdi" class="form-control" />
+            <input asp-for="BakimAdi" class="form-control" required/>
             <span asp-validation-for="BakimAdi" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="Ucret" class="control-label"></label>
-            <input asp-for="Ucret" class="form-control" />
+            <input asp-for="Ucret" class="form-control" required/>
             <span asp-validation-for="Ucret" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="Aciklama" class="control-label"></label>
-            <input asp-for="Aciklama" class="form-control" />
+            <input asp-for="Aciklama" class="form-control" required/>
             <span asp-validation-for="Aciklama" class="text-danger"></span>
         </div>
         

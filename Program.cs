@@ -29,7 +29,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-//  Session'� kullanmadan �nce ekle!
+
 app.UseSession();
 
 app.UseAuthorization();

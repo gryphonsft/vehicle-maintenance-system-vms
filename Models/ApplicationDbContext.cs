@@ -20,28 +20,28 @@ namespace AspProject1.Models
          .HasKey(a => a.AracID)
          ;
 
-            // BakimFiyatlari tablosu için Primary Key
+           
             modelBuilder.Entity<BakimFiyatlari>()
-        .HasKey(b => b.BakimID); // Anahtar tanımlaması
+        .HasKey(b => b.BakimID); 
 
             modelBuilder.Entity<BakimFiyatlari>().HasData(
                 new BakimFiyatlari { BakimID = 1, BakimAdi = "Yağ Değişimi", Ucret = 500 },
                 new BakimFiyatlari { BakimID = 2, BakimAdi = "Buji Değişimi", Ucret = 300 }
             );
 
-            // Islemler tablosu için Foreign Key bağlantıları
+            
             modelBuilder.Entity<Islemler>()
                 .HasKey(i => i.IslemID);
 
             modelBuilder.Entity<Islemler>()
-                .HasOne(i => i.Arac) // Islemler tablosundaki Arac nesnesi
-                .WithMany() // Bir aracın birçok işlemi olabilir
+                .HasOne(i => i.Arac) 
+                .WithMany() 
                 .HasForeignKey(i => i.AracID)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Islemler>()
-                .HasOne(i => i.BakimFiyat) // Islemler tablosundaki Bakim nesnesi
-                .WithMany() // Bir bakım birçok işlemde olabilir
+                .HasOne(i => i.BakimFiyat) 
+                .WithMany() 
                 .HasForeignKey(i => i.BakimID)
                 .OnDelete(DeleteBehavior.Cascade);
         }

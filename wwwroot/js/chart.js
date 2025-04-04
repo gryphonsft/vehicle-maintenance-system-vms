@@ -3,7 +3,7 @@
     new Chart(ctx, {
         type: "pie",
         data: {
-            labels: ["Toplam Araç", "Bakımda Olan", "Tamamlanan Bakım"],
+            labels: ["Toplam Araç", "Bakim sayisi", "Tamamlanan Bakım"],
             datasets: [
                 {
                     data: JSON.parse(document.getElementById("chartData").textContent),

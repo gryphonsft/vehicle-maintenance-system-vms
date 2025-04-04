@@ -1,4 +1,19 @@
-input.form-control {
-    background-color: #4d4d4f; 
-    color: black; 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,100&display=swap');
+.sidebar {
+    transition: all 0.3s ease-in-out;
 }
+.roboto {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+  aside a:hover, aside h1:hover {
+    background-color: #555; 
+    color: #fff; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 10px;
+  }
+  
