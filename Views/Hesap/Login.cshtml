@@ -5,29 +5,30 @@
 }
 
 
-<div class="container d-flex justify-content-center align-items-center mt-5">
+<div class="container d-flex justify-content-center align-items-center mt-40">
     
     <div class="p-4 bg-dark text-white rounded-3 shadow-lg " style="width: 350px;">
-        <h1 class="text-center">Giriş Ekranı</h1>
+        
         <form asp-action="Login" method="post">
             <div class="form-group">
-                <label asp-for="Username" class="control-label"></label>
-                <input asp-for="Username" class="form-control" />
-                <span asp-validation-for="Username" class="text-danger"></span>
+                
+                <input asp-for="Username" placeholder="Username" class="form-control rounded-2xl" />
+                <span asp-validation-for="Username" class="text-danger "></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" type="password" class="form-control" />
+            <div class="form-group my-4">
+                
+                <input asp-for="Password" type="password" placeholder="Password" class="form-control rounded-2xl" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <br />
             <div class="form-group text-center">
-                <input type="submit" value="Giriş Yap" class="btn btn-success w-100" />
+                <input  type="submit" value="Giriş Yapın" class="btn btn-success w-100 text-2xl rounded-2xl" />
+               
             </div>
         </form>
         <br />
         <div class="text-center">
-            <a asp-action="Register" class="btn btn-primary w-100">Hesabınız yok mu? Kayıt olun</a>
+            <a asp-action="Register" class="btn btn-primary w-100 text-2xl rounded-2xl"> Kayıt Olun</a>
         </div>
     </div>
 </div>

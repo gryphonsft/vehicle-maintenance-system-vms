@@ -16,36 +16,39 @@
     </style>
 </head>
 
-<body class="bg-gray-100 flex roboto" style="background-color: rgb(34, 33, 33);">
+<body class="bg-gray-100 flex roboto" style="background-color: #ffffff;">
 
-   <aside class="sidebar w-64 text-white p-4 h-screen rounded-tr-3xl rounded-br-3xl" style="background-color: #333333;">
+   <aside class="sidebar w-64 text-white p-4 h-screen  " style="background-color: #a0a1a2;">
     <h1 class="text-3xl mb-2  text-center sidebar-item mt-4" style="font-weight: bold;">Bakım Yönetim Sistemi </h1>
-    <div class="space-y-2 rounded-2xl p-2 text-center mt-8">
+  
+    <div class="space-y-2 rounded-2xl p-2 text-center mt-8 ">
+         <div class="rounded-2xl " style="background-color: #46DFB1; ">
         <a asp-controller="Home" asp-action="Main" class="sidebar-item">
-            <h1 class="text-2xl rounded-2xl font-semibold mb-4 mt-16">
-                <i class="fa-solid fa-house"></i> Ana Menü
+            <h1 class="text-2xl rounded-2xl font-semibold mb-4 mt-16 h-12  justify-center items-center flex">
+                <i class="fa-solid fa-house mx-2"></i>   Ana Menü
             </h1>
         </a>
     </div>
-
-    <div class="space-y-2 rounded-2xl p-2 text-center mt-2">
+</div>
+    <div class="space-y-2 rounded-2xl p-2 mt-2 ">
         <a asp-controller="Arac" asp-action="Giris" class="sidebar-item">
-            <h1 class="text-3xl"><i class="fa-solid fa-car-side"></i> Araç Girişi </h1>
+            <h1 class="text-2xl"><i class="fa-solid fa-car-side"></i> Araç Girişi </h1>
         </a>
     </div>
-    <div class="space-y-2 rounded-2xl p-2 text-center mt-4">
+   
+    <div class="space-y-2 rounded-2xl p-2  mt-4">
         <a asp-controller="Arac" asp-action="Liste" class="sidebar-item">
             <h1 class="text-2xl"><i class="fa-solid fa-list"></i> Araç Listesi </h1>
         </a>
     </div>
-    <div class="space-y-2 rounded-2xl p-2 text-center mt-4">
+    <div class="space-y-2 rounded-2xl p-2  mt-4">
         <a asp-controller="Bakim" asp-action="Bakim" class="sidebar-item">
-            <h1 class="text-2xl"><i class="fa-solid fa-dollar-sign"></i> Bakım fiyatları </h1>
+            <h1 class="text-2xl"><i class="fa-solid fa-dollar-sign mx-1"></i> Bakım fiyatları </h1>
         </a>
     </div>
-    <div class="space-y-2 rounded-2xl p-2 text-center mt-4">
+    <div class="space-y-2 rounded-2xl p-2  mt-4">
         <a asp-controller="Islem" asp-action="Index" class="sidebar-item">
-            <h1 class="text-3xl"><i class="fa-solid fa-gear"></i> İşlemler </h1>
+            <h1 class="text-2xl"><i class="fa-solid fa-gear"></i> İşlemler </h1>
         </a>
     </div>
 </aside>

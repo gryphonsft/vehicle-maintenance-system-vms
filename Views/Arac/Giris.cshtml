@@ -3,54 +3,54 @@
 @{
     ViewData["Title"] = "Araç Giriş";
 }
-<div class=" rounded-3xl gap-2 p-2 mb-0 text-white mt-40" style="background-color: #333333;">
+<div class=" rounded-3xl gap-2 p-2 mb-0 text-white mt-40" style="background-color: #676868;">
+<h2 class="font-bold text-center text-2xl mt-2">Araç Girişi </h2>
 
-<h2 class="font-bold text-center">Araç Girişi</h2>
-<hr />
+
 <br />
 
 <form asp-action="AracEkle" method="post">
-    <div class="font-bold">
+    <div class="font-bold ">
     <div class="form-group ">
         <label asp-for="Plaka" class="control-label"></label>
-        <input asp-for="Plaka" class="form-control" required />
+        <input asp-for="Plaka" class="form-control mb-3 rounded-3xl" required />
         <span asp-validation-for="Plaka" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Marka" class="control-label"></label>
-        <input asp-for="Marka" class="form-control" required />
+        <input asp-for="Marka" class="form-control mb-3 rounded-3xl" required />
         <span asp-validation-for="Marka" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Model" class="control-label"></label>
-        <input asp-for="Model" class="form-control" required/>
+        <input asp-for="Model" class="form-control mb-3 rounded-3xl" required/>
         <span asp-validation-for="Model" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Yil" class="control-label"></label>
-        <input asp-for="Yil" class="form-control" type="number" required/>
+        <input asp-for="Yil" class="form-control mb-3 rounded-3xl" type="number" required/>
         <span asp-validation-for="Yil" class="text-danger"></span>
     </div>
         <div class="form-group">
-            <label asp-for="BakimNotu" class="control-label"></label>
-            <input asp-for="BakimNotu" class="form-control" required/>
+            <h1>Bakım Notu</h1>
+            <input asp-for="BakimNotu" class="form-control mb-3 rounded-3xl" required/>
             <span asp-validation-for="BakimNotu" class="text-danger"></span>
         </div>
     <div class="form-group">
-        <label asp-for="MusteriAdi" class="control-label"></label>
-        <input asp-for="MusteriAdi" class="form-control" required/>
+        <h1>Müşteri Adı</h1>
+        <input asp-for="MusteriAdi" class="form-control mb-3 rounded-3xl" required/>
         <span asp-validation-for="MusteriAdi" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Telefon" class="control-label"></label>
-        <input asp-for="Telefon" class="form-control" required/>
+        <input asp-for="Telefon" class="form-control mb-3 rounded-3xl" required/>
         <span asp-validation-for="Telefon" class="text-danger"></span>
     </div>
     </div>
     <br />
     <div class="text-center">
-    <button type="submit" class="btn btn-primary bg-indigo-600 " >Kaydet</button>
-     <a href="@Url.Action("Main", "Home")" class="btn btn-primary bg-indigo-600">Geri dön</a>
+    <button type="submit" class="btn btn-primary bg-blue-500 rounded-3xl text-2xl mb-2" >Kaydet</button>
+    
     </div>
 </form>
 

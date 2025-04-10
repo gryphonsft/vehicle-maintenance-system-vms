@@ -7,7 +7,7 @@
             datasets: [
                 {
                     data: JSON.parse(document.getElementById("chartData").textContent),
-                    backgroundColor: ["#3b82f6", "#f59e0b", "#10b981"],
+                    backgroundColor: ["#213a58", "#15919B", "#46DFB1"],
                     borderColor: ["#3B82F6", "#FACC15", "#22C55E"],
                     borderWidth: 1
                 }
