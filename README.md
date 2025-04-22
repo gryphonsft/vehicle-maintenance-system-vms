@@ -9,7 +9,6 @@
 ![BakimFiyatlari](Pictures/bl.PNG)
 # İşlem Kontrol ekranı
 ![Islemler](Pictures/ie.PNG)
-# İşlem başarılı ekranı
-![IslemBasarili](Pictures/ib.PNG)
+
 
 
