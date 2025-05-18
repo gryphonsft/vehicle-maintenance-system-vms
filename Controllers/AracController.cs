@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using AspProject1.Models; // AraclarContext ve Araclar modeli burada
+using AspProject1.Models; 
 using System.Linq;
 
 namespace AspProject1.Controllers
@@ -96,11 +96,12 @@ namespace AspProject1.Controllers
                     (a.MusteriAdi ?? "").Contains(searchString));
             }
             var sonucListesi = araclar.ToList();
+            
             if(!sonucListesi.Any()){
                 ViewData["SonucYok"]="Aramanıza uygun araç bulunamadı.";
             }
-
             ViewData["SearchString"] = searchString;
+            
             return View("Liste", araclar.ToList());
         }
 

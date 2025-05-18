@@ -16,8 +16,8 @@
         });
     </script>
 }
-<div class="rounded-3xl gap-2 p-2 mb-0 text-white mt-40" style="background-color: #676868;">
-    <h1 class="text-3xl font-semibold mb-4 text-center"><i class="fa-solid fa-gear"></i>İşlemler</h1>
+<div class="rounded-3xl gap-2 p-2 mb-0 text-white p-5" style="background-color: #676868; width:1200px; height:auto;">
+    <h1 class="text-3xl font-semibold mb-4  text-center"><i class="fa-solid fa-gear"></i>İşlemler</h1>
 
     <div class="mb-4">
         <form method="post" action="@Url.Action("Ekle", "Islem")">
@@ -69,6 +69,7 @@
 
     <h2 class="text-2xl font-semibold mt-2 text-center">İşlemler</h2>
     <br>
+    <a href="@Url.Action("IslemlerPdf", "Islem")" class="btn btn-success text-center" style="text-align: end;">PDF Olarak İndir</a>
     <table class="min-w-full bg-gray-800 border border-gray-300 rounded-lg shadow-md" style="margin-bottom: 20px;">
         <thead class="bg-gray-100">
             <tr class="text-white" style="background-color: #292828;">

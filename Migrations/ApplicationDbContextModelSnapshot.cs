@@ -116,7 +116,6 @@ namespace AspProject1.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("IslemNotu")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("IslemTarihi")

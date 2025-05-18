@@ -12,46 +12,59 @@
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
+       
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
 
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
     </style>
 </head>
 
 <body class="bg-gray-100 flex roboto" style="background-color: #ffffff;">
 
-   <aside class="sidebar w-64 text-white p-4 h-screen  " style="background-color: #a0a1a2;">
-    <h1 class="text-3xl mb-2  text-center sidebar-item mt-4" style="font-weight: bold;">Bakım Yönetim Sistemi </h1>
-  
-    <div class="space-y-2 rounded-2xl p-2 text-center mt-8 ">
-         <div class="rounded-2xl " style="background-color: #46DFB1; ">
-        <a asp-controller="Home" asp-action="Main" class="sidebar-item">
-            <h1 class="text-2xl rounded-2xl font-semibold mb-4 mt-16 h-12  justify-center items-center flex">
-                <i class="fa-solid fa-house mx-2"></i>   Ana Menü
-            </h1>
-        </a>
-    </div>
-</div>
-    <div class="space-y-2 rounded-2xl p-2 mt-2 ">
-        <a asp-controller="Arac" asp-action="Giris" class="sidebar-item">
-            <h1 class="text-2xl"><i class="fa-solid fa-car-side"></i> Araç Girişi </h1>
-        </a>
-    </div>
-   
-    <div class="space-y-2 rounded-2xl p-2  mt-4">
-        <a asp-controller="Arac" asp-action="Liste" class="sidebar-item">
-            <h1 class="text-2xl"><i class="fa-solid fa-list"></i> Araç Listesi </h1>
-        </a>
-    </div>
-    <div class="space-y-2 rounded-2xl p-2  mt-4">
-        <a asp-controller="Bakim" asp-action="Bakim" class="sidebar-item">
-            <h1 class="text-2xl"><i class="fa-solid fa-dollar-sign mx-1"></i> Bakım fiyatları </h1>
-        </a>
-    </div>
-    <div class="space-y-2 rounded-2xl p-2  mt-4">
-        <a asp-controller="Islem" asp-action="Index" class="sidebar-item">
-            <h1 class="text-2xl"><i class="fa-solid fa-gear"></i> İşlemler </h1>
-        </a>
-    </div>
-</aside>
+    <aside class="sidebar w-64 text-white p-4 h-screen  " style="background-color: #a0a1a2;">
+        <h1 class="text-3xl mb-2  text-center sidebar-item mt-4" style="font-weight: bold;">Bakım Yönetim Sistemi </h1>
+
+        <div class="space-y-2 rounded-2xl p-2 text-center mt-8 ">
+            <div class="rounded-2xl " style="background-color: #46DFB1; ">
+                <a asp-controller="Home" asp-action="Main" class="sidebar-item">
+                    <h1 class="text-2xl rounded-2xl font-semibold mb-4 mt-16 h-12  justify-center items-center flex">
+                        <i class="fa-solid fa-house mx-2"></i> Ana Menü
+                    </h1>
+                </a>
+            </div>
+        </div>
+        <div class="space-y-2 rounded-2xl p-2 mt-2 ">
+            <a asp-controller="Arac" asp-action="Giris" class="sidebar-item">
+                <h1 class="text-2xl"><i class="fa-solid fa-car-side"></i> Araç Girişi </h1>
+            </a>
+        </div>
+
+        <div class="space-y-2 rounded-2xl p-2  mt-4">
+            <a asp-controller="Arac" asp-action="Liste" class="sidebar-item">
+                <h1 class="text-2xl"><i class="fa-solid fa-list"></i> Araç Listesi </h1>
+            </a>
+        </div>
+        <div class="space-y-2 rounded-2xl p-2  mt-4">
+            <a asp-controller="Bakim" asp-action="Bakim" class="sidebar-item">
+                <h1 class="text-2xl"><i class="fa-solid fa-dollar-sign mx-1"></i> Bakım fiyatları </h1>
+            </a>
+        </div>
+        <div class="space-y-2 rounded-2xl p-2  mt-4">
+            <a asp-controller="Islem" asp-action="Index" class="sidebar-item">
+                <h1 class="text-2xl"><i class="fa-solid fa-gear"></i> İşlemler </h1>
+            </a>
+        </div>
+    </aside>
 
     <div class="main-container flex-1">
         <main class="p-4">
